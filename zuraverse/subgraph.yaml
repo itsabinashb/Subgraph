@@ -1,0 +1,47 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Simple
+    network: sepolia
+    source:
+      address: "0x4850c6273828719d736c70d15e3541f434098f42"
+      abi: Simple
+      startBlock: 4031830
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        # - GotNum
+        - QueryTime
+      abis:
+        - name: Simple
+          file: ./abis/Simple.json
+      eventHandlers:
+        # - event: GotNum(uint256)
+        #   handler: handleGotNum
+        - event: QueryTime(uint256)
+          handler: handleQueryTime
+      file: ./src/simple.ts
+  - kind: ethereum
+    name: Simple2
+    network: sepolia
+    source:
+      address: "0x9F6DE5E0e116a887207a75d7Bdc5E8Ea3F7E4Dd5"
+      abi: Simple2
+      startBlock: 4031949
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - ReturnedCount
+      abis:
+        - name: Simple2
+          file: ./abis/Simple2.json
+      eventHandlers:
+        - event: ReturnedCount(uint256)
+          handler: handleReturnedCount
+      file: ./src/simple-2.ts
