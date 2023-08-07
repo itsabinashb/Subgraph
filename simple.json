@@ -1,0 +1,35 @@
+[
+	{
+		"inputs": [],
+		"name": "getNum",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "Number",
+				"type": "uint256"
+			}
+		],
+		"name": "GotNum",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "QueryTime",
+		"type": "event"
+	}
+]
